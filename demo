@@ -1,0 +1,264 @@
+:root
+{
+    --bg-color: rgb(255, 255, 255);
+    --black-color:#000;
+    --typewriterspeed: 4s;
+   --typewriterchararcters: 26;
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto Mono', monospace;
+    
+}
+
+section.top
+{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    overflow-x: hidden;
+    background: var(--bg-color);
+    z-index: -1000px;
+   
+    
+}
+.me{
+    animation: showUp 2s ease calc(var(--typewriterspeed) + 1.4s) forwards;
+    transform: translateX(700px);
+}
+.sub_text
+{
+    color: var(--black-color);
+    opacity: 0;
+        transform: translateY(3rem);
+        animation: fadeInUp 2s ease calc(var(--typewriterspeed) + 1.15s) forwards;
+        
+}
+.main_text
+{
+    font-size: 30px;
+    font-weight: 300;
+    position: relative;
+    width: max-content;
+    color: var(--black-color);
+    z-index: -10px;
+}
+.main_text::before,::after
+{
+    content: "";
+    position: absolute;
+   
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.main_text::before
+{
+    background: var(--bg-color);
+    animation: 
+    typewriter var(--typewriterspeed) steps(var(--typewriterchararcters)) 1s forwards;
+}
+.main_text::after
+{
+    
+    width: 0.125em;
+    height: auto;
+    background: var(--black-color);
+    animation: 
+    typewriter var(--typewriterspeed) steps(var(--typewriterchararcters)) 1s forwards, blink 750ms steps(24) infinite;
+}
+/************************Animations************************/
+@keyframes typewriter {
+    to{
+        left: 100%;
+    }
+}
+@keyframes blink {
+    to{
+        background: transparent;
+    }
+}
+@keyframes fadeInUp {
+    to 
+    {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes showUp {
+    to 
+    {
+        
+        transform: translateX(0);
+    }
+}
+/************************Animations************************/
+section.orange
+{
+    width: 100%;
+    height: 100vh;
+    background: #FCA311;
+    overflow-x: hidden;
+    position: fixed;
+    
+}
+nav
+{
+   
+    justify-content: space-between;
+    padding: 20px;
+    width: 100%;
+    height: fit-content;
+    background-color: #26A69A;
+    color: var(--bg-color);
+    display: flex;
+    
+    
+    
+   
+    
+}
+nav ul{
+
+    list-style-type: none;
+    margin-left: auto;
+    padding: 0;
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    
+}
+li.resume
+{
+    background-color:#fca311;
+    border-radius: 7px;
+
+}
+
+nav ul li
+{
+  padding: 10px;
+
+}
+nav ul li:hover
+{
+    background-color: rgba(225, 225, 225, 0.3);
+    border-radius: 7px;
+    cursor: pointer;
+    
+}
+
+nav ul li a{
+   
+    text-decoration: none;
+    color:white;
+    font-size: 20px;
+   
+}
+logo
+{
+    font-family: 'Lobster', cursive;
+    font-size: 30px;
+}
+
+.title_
+{
+    color: #14213D;
+    margin-left: 10px;
+    font-size: 50px;
+    font-family: lobster;
+}
+.title_sub
+{
+    color: var(--bg-color);
+    margin-left: 10px;
+    font-size: 30px;
+    font-family: lobster;
+}
+logo
+{
+    color: white;
+    cursor: pointer;
+}
+.phones
+{
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    margin-right: 50px;
+  /*  transform: translateX(1500px);
+    animation: showUp 2s ease calc(var(--typewriterspeed) + 1.4s) forwards;*/
+    
+}
+.webselect
+{
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    
+    
+    
+
+}
+.selectimg
+{
+    display: block;
+    width: 200px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--bg-color);
+    padding: 10px;
+    margin-left: 20px;
+    border-radius: 7px;
+    cursor: pointer;
+    flex-direction: column;
+    margin-bottom: 5px;
+}
+.selectimg:hover
+{
+    border: #14213D 4px solid;
+    transition: 0.1s;
+}
+.selectimg#twale
+{
+    border: #14213D 4px solid;
+}
+.selectdiv
+{
+    width: fit-content;
+    height: fit-content;
+    text-align: center;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.selectdiv a
+{
+font-size: 20px;
+color: #1D3557;
+margin-left: 5px;
+text-decoration: underline 3px #1D3557;
+}
+.selectdiv a:hover
+{
+    text-decoration: underline 1px #1D3557;
+    transition: 0.5s;
+    color: var(--bg-color);
+}
