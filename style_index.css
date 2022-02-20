@@ -2,12 +2,16 @@
 {
     --bg-color: rgb(242, 255, 254);
     --black-color:#000;
-    --orange:#ff9900;
+    --orange:#26A69A;
     --white:#fff;
     --nav:#26A69A;
     --navy:#ffffff;
     --typewriterspeed: 3s;
    --typewriterchararcters: 26;
+}
+#modeicon
+{
+   
 }
 #bars , #times
 {
@@ -135,10 +139,36 @@ section.orange
     width: 100%;
     height: fit-content;
    
-    background: var(--orange);
+    
     overflow: hidden;
+    background: linear-gradient(101deg, #550527, #2a9d8f, #f2fffe);
+    background-size: 600% 600%;
+
+    -webkit-animation: AnimationName 16s ease infinite;
+    -moz-animation: AnimationName 16s ease infinite;
+    -o-animation: AnimationName 16s ease infinite;
+    animation: AnimationName 16s ease infinite;
     
-    
+}
+@-webkit-keyframes AnimationName {
+    0%{background-position:36% 0%}
+    50%{background-position:65% 100%}
+    100%{background-position:36% 0%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:36% 0%}
+    50%{background-position:65% 100%}
+    100%{background-position:36% 0%}
+}
+@-o-keyframes AnimationName {
+    0%{background-position:36% 0%}
+    50%{background-position:65% 100%}
+    100%{background-position:36% 0%}
+}
+@keyframes AnimationName {
+    0%{background-position:36% 0%}
+    50%{background-position:65% 100%}
+    100%{background-position:36% 0%}
 }
 
 nav
@@ -467,7 +497,7 @@ logo
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #fff;
+    background-color: #f2fffe;
     padding: 10px;
     margin-left: 20px;
     border-radius: 7px;
@@ -495,11 +525,13 @@ logo
     align-items: center;
     margin-bottom: 10px;
     
+    
 }
 .selectdiv a
 {
 font-size: 20px;
-color: #1D3557;
+color: var(--white);
+
 margin-left: 5px;
 text-decoration: underline 3px #1D3557;
 }
@@ -507,7 +539,7 @@ text-decoration: underline 3px #1D3557;
 {
     text-decoration: underline 1px #1D3557;
     transition: 0.5s;
-    color: var(--white);
+    color: #1D3557;  
 }
 .pattern
 {

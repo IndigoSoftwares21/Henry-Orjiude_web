@@ -63,22 +63,34 @@ function indigo()
 {
     location.href = "https://www.indigosoftwares.xyz/";
 }
-//window.onload = darkMode();
+//window.onload = isclicked_uibuttton();
 
-    function darkMode()
+    
+
+
+    let modelight = 'sunny-outline'
+    let modedark = 'moon-outline'
+
+    function darkmode()
     {
         document.documentElement.style.setProperty('--bg-color', '#263238')
         document.documentElement.style.setProperty('--black-color', '#FFF')
         document.documentElement.style.setProperty('--orange', '#700a00')
         document.documentElement.style.setProperty('--nav', '#004d40')
+        document.getElementById("modeicon").setAttribute("name",modelight)
+        document.getElementById("modetitle").innerHTML = "Light Mode"
+        //alert("Darkmode")
     }
 
-    function lighMode()
+    function lightmode()
     {
         document.documentElement.style.setProperty('--bg-color', '#F2FFFE')
         document.documentElement.style.setProperty('--black-color', '#000')
         document.documentElement.style.setProperty('--orange', '#ff9900')
         document.documentElement.style.setProperty('--nav', '#26A69A')
+        document.getElementById("modeicon").setAttribute('name',modedark)
+        document.getElementById("modetitle").innerHTML = "Dark Mode"
+        //alert("Lightmode")
     }
 
 function openMenu()
@@ -114,10 +126,54 @@ menu.style.display= "none"
 
 
 }
+    
+let clickedui  = localStorage.getItem("clickeduianswer")|| false;
 
-if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    darkMode();
-  }
-  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+function checkui()
+{
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)')) {
+        darkmode();
+       
+        //document.getElementById("modeicon").setAttribute('name','sunny-outline')
+      }
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+        lightmode();
+        
+      }
+}
+
+function toggleui()
+{
+   if (document.getElementById("modeicon").getAttribute("name")=="moon-outline") {
+    clickedui = 1;
+    localStorage.setItem("clickeduianswer", clickedui);
+   }
+   if (document.getElementById("modeicon").getAttribute("name")=="sunny-outline") {
+    clickedui = 2;
+    localStorage.setItem("clickeduianswer", clickedui);
+   }
+    
+    
+
+}
+
+if(clickedui==1)
+{
+  darkmode();
+}
+else if (clickedui==2)
+{
     lightmode();
-  }
+}
+
+
+else
+{
+ checkui()
+    
+}
+
+
+
+
+
