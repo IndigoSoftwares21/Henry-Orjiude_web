@@ -308,7 +308,7 @@ navside ul li a{
     background: #550527;
     z-index: 9;
     padding: 20px;
-    box-shadow: 10px 0 0 #2A9D8F;
+    box-shadow: 10px 0 0 var(--nav);
     font-family: 'Raleway', sans-serif;
     border-left: 10px solid #550527;
     overflow-x: hidden;
@@ -344,7 +344,7 @@ navside ul li a{
   word-spacing: 2px;
   letter-spacing: 1px;
   font-weight: 700;
-  text-shadow: #2A9D8F 2px 2px 2px;
+  text-shadow: var(--nav) 2px 2px 2px;
 }
 .welcome
 {
@@ -352,7 +352,7 @@ navside ul li a{
 }
 .navigation ul li.active
 {
-    background: #2A9D8F;
+    background: var(--nav);
     
 }
 .navigation ul li a
@@ -361,7 +361,7 @@ navside ul li a{
     width: 100%;
     display: flex;
     text-decoration: none;
-    color: var(--black-color);
+    color: #fff;
 
 
 }
@@ -1036,6 +1036,16 @@ textarea
 
 
 
+.navigation ul li a
+{
+    position: relative;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: var(--black-color);
+
+
+}
 
 
 
