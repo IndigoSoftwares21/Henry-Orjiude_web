@@ -13,6 +13,17 @@
 {
     display: none;
 }
+.bars
+{
+    color: #ffffff;
+    font-size: 50px;
+    text-align: right;
+    margin-left: auto;
+    visibility: hidden;
+   
+    
+    
+}
 html {
   scroll-behavior: smooth;
 }
@@ -21,6 +32,7 @@ body{
     display: flex;
     justify-content: center;
     flex-direction: column;
+    background: var(--bg-color);
 }
 *{
     margin: 0;
@@ -114,6 +126,10 @@ body{
     }
 }
 /************************Animations************************/
+section.mainsection
+{
+   display: flex;
+}
 section.orange
 {
     width: 100%;
@@ -147,10 +163,11 @@ nav
 nav ul{
 
     list-style-type: none;
-    margin-left: auto;
+    margin-right: auto;
     padding: 0;
-    display: inline-flex;
+    display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
     gap: 30px;
     
 }
@@ -181,6 +198,207 @@ nav ul li a{
     font-size: 20px;
    
 }
+
+/********************************************New Nav*******************************************/
+
+
+
+navside
+{
+   
+    justify-content: space-between;
+    padding: 20px;
+    width: fit-content;
+    height: 100vh;
+    background-color: var(--nav) ;
+    color: var(--bg-color);
+    display: flex;
+    position: relative;
+    z-index: 10000;
+    border-bottom-right-radius: 20px;
+   
+    border-top-right-radius: 20px;
+    
+   
+    
+    
+    
+   
+    
+}
+navside ul{
+
+    list-style-type: none;
+    margin-right: auto;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 30px;
+    
+}
+li.resume
+{
+    background-color:var(--orange);
+    border-radius: 7px;
+
+}
+
+navside ul li
+{
+  padding: 10px;
+
+}
+navside ul li:hover
+{
+    background-color: rgba(225, 225, 225, 0.3);
+    border-radius: 7px;
+    cursor: pointer;
+    
+}
+
+navside ul li a{
+   
+    text-decoration: none;
+    color:white;
+    font-size: 20px;
+   
+}
+
+
+
+
+.navigation
+{
+    width: 70px;
+    height:380px;
+   
+    border-bottom-right-radius: 20px;
+   
+    border-top-right-radius: 20px;
+    
+    position: relative;
+    background: #550527;
+    z-index: 9;
+    padding: 20px;
+    box-shadow: 10px 0 0 #2A9D8F;
+    font-family: 'Raleway', sans-serif;
+    border-left: 10px solid #550527;
+    overflow-x: hidden;
+    transition: width 0.5s;
+    
+}
+.navigation:hover
+{
+    width: 300px;
+    
+}
+.navigation ul
+{
+    top: 0;
+    left: 0;
+    width: 100%;
+    position: absolute;
+    padding-left: 5px;
+    padding-top: 40px;
+}
+.navigation ul li
+{
+    list-style: none;
+    width: 100%;
+    position: relative;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+.one
+{
+  font-size: 30px; 
+  color: #ffffff;  
+  word-spacing: 2px;
+  letter-spacing: 1px;
+  font-weight: 700;
+  text-shadow: #2A9D8F 2px 2px 2px;
+}
+.welcome
+{
+    padding: 30px;
+}
+.navigation ul li.active
+{
+    background: #2A9D8F;
+    
+}
+.navigation ul li a
+{
+    position: relative;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: #ffffff;
+
+
+}
+
+
+
+
+
+
+
+
+.navigation ul li a .icon
+{
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+}
+.navigation ul li a .icon ion-icon
+{
+    position: relative;
+    font-size: 1.5em;
+    z-index: 1;
+
+}
+.navigation ul li a .title
+{
+    position: relative;
+    display: block;
+    padding-left: 10px;
+    height: 60px;
+    line-height: 50px;
+    white-space: nowrap;
+}
+.bar
+{
+    width: 100%;
+    box-shadow: 7px 7px #2A9D8F;
+    align-items: center;
+    height: fit-content;
+    background: #550527;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: absolute;
+
+    
+   
+}
+
+
+
+
+
+
+
+
+
+
+/********************************************New Nav*******************************************/
+
+
 logo
 {
     font-family: 'Lobster', cursive;
@@ -236,6 +454,7 @@ logo
     margin-right: 50px;
     height: max-content;
     display: inline-flex;
+    z-index: -100;
     
     
 
@@ -743,7 +962,45 @@ textarea
 
 
 
+.navigation ul li.active a::before
+{
+  
+    background: rgba(225, 225, 225, 0.0);
+    
+}
+.navigation ul li.active a::after
+{
+    
+   background:rgba(225, 225, 225, 0.0);
+  
+}
 
+
+    .bars
+    {
+        visibility: visible;
+    }
+    .navigation
+{
+    width: 1px;
+    height:380px;
+   
+    border-bottom-right-radius: 20px;
+   
+    border-top-right-radius: 20px;
+    
+    position: absolute;
+    background: rgba(10, 10, 10, 0.1);
+    z-index: 9;
+    padding: 1px;
+    box-shadow: 10px 0 0 #2A9D8F;
+    font-family: 'Raleway', sans-serif;
+    border-left: 10px solid #550527;
+    backdrop-filter: blur(10px);
+    overflow-x: hidden;
+    transition: width 0.5s;
+    
+}
 
 
 

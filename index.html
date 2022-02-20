@@ -1,6 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script  src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
+        <script  src="https://www.gstatic.com/firebasejs/8.2.7/firebase-auth.js"></script>
+    <link
+     href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,700;0,800;1,100;1,200&display=swap" 
+     rel="stylesheet">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Genos:ital,wght@0,300;0,500;1,100;1,200&display=swap" 
+    rel="stylesheet">
+    
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +22,7 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" 
     integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous"></script>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,32 +43,79 @@
 
     <nav id="navBar">
         <logo>Henry</logo>
-        <ul id="menu">
-            <li>
-                <a class="listitem" href="# ">Home</a> 
-            </li>
-            <li>
-                <a href="#projects">Projects</a>
-            
-            </li>
-            <li>
-                <a href="#footer">Contact</a>
-            
-            </li>
-            <li class="resume">
-                <a href="#">Resume</a>
-            
-            </li>
-        </ul>
-      <i id="bars" onclick="openMenu()" class="fas fa-bars"></i>
-        <i id="times" onclick="closeMenu()" class="fas fa-times"></i>
+       
+        <ion-icon onclick=" menua()" class="bars" name="menu-outline"></ion-icon>
        
     </nav>
 
 
-    <section >
+    <section class="mainsection">
+      
+        <div id="navig" class="navigation">
+            <ul>
+                <li id="home" class="list active">
+                    <a href="home.html">
+                        <span id="home" class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                         </span>
+                            <span class="title">
+                                    Home
+                               </span>
+    
+                    </a>
+                </li>
+               
+                <li id="updates" class="list">
+                    <a href="">
+                        <span class="icon">
+                            <ion-icon name="construct-outline"></ion-icon>
+                         </span>
+                            <span class="title">
+                                    Projects
+                               </span>
+    
+                    </a>
+                </li>
+                <li id="help" class="list">
+                    <a href="">
+                        <span class="icon">
+                            <ion-icon name="help-outline"></ion-icon>
+                         </span>
+                            <span class="title">
+                                    Help
+                               </span>
+    
+                    </a>
+                </li>
+                <li id="learn" class="list">
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="briefcase-outline"></ion-icon>
+                         </span>
+                            <span class="title">
+                                    Resume
+                               </span>
+    
+                    </a>
+                </li>
+                <li id="signout" class="list">
+                    <a href="" onclick="UiMode()">
+                        <span class="icon">
+                            <ion-icon name="moon-outline"></ion-icon>
+                         </span>
+                            <span class="title">
+                                        Dark Mode
+                               </span>
+    
+                    </a>
+                </li>
+               
+            </ul>
+            
+        </div>
        
        <items class="top">
+        
         <article>
             <h1 class="main_text">Hello, I am Henry Orjiude.</h1>
             <br>
@@ -194,23 +256,109 @@
     </section>
 
     <script>
-         // When the user scrolls the page, execute myFunction
- window.onscroll = function() {myFunction()};
+        const home = document.getElementById("home");
+        const learn = document.getElementById("learn");
+        const updates = document.getElementById("updates");
+        const help = document.getElementById("help");
+        const signout = document.getElementById("signout");
 
-// Get the navbar
-var navbar = document.getElementById("navBar");
+        signout.onmouseover = function hover() {
+           signout.className = "list active";
+           home.className = "list";
+           
+       }
+       signout.onmouseout = function nohover() {
+        home.className = "list active";
+           updates.className = "list";  
+           learn.className = "list"; 
+           help.className = "list";  
+           signout.className = "list";  
+       }
+       help.onmouseover = function hover() {
+           help.className = "list active";
+           home.className = "list";
+           
+       }
+       help.onmouseout = function nohover() {
+        home.className = "list active";
+           updates.className = "list";  
+           learn.className = "list"; 
+           help.className = "list";  
+           signout.className = "list";  
+       }
 
-// Get the offset position of the navbar
-var sticky = navbar.offsetTop;
+       learn.onmouseover = function hover() {
+           learn.className = "list active";
+           home.className = "list";
+         
+       }
+       learn.onmouseout = function nohover() {
+        home.className = "list active";
+           learn.className = "list";  
+           updates.className = "list";  
+           help.className = "list";  
+           signout.className = "list";  
+       }
+       updates.onmouseover = function hover() {
+           updates.className = "list active";
+           home.className = "list";
+           
+       }
+       updates.onmouseout = function nohover() {
+        home.className = "list active";
+           updates.className = "list";  
+           learn.className = "list"; 
+           help.className = "list";  
+           signout.className = "list";  
+       }
+     
 
-// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
-function myFunction() {
-  if (window.pageYOffset >= sticky) {
-    navbar.classList.add("sticky")
-  } else {
-    navbar.classList.remove("sticky");
-  }
-}
+       function menua() {
+        var menubtn = document.getElementById('navig');
+        
+           if (menubtn.style.width === "200px") {
+            menubtn.style.width = "0px"
+           }
+           else
+           {
+            menubtn.style.width = "200px"
+           }
+  
+
+        
+       }
+         
+        
+       
+      
+       
+       
+
+
+
+
+
     </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
 </body>
 </html>
