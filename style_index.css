@@ -9,10 +9,7 @@
     --typewriterspeed: 3s;
    --typewriterchararcters: 26;
 }
-#modeicon
-{
-   
-}
+
 #bars , #times
 {
     display: none;
@@ -24,7 +21,7 @@
     text-align: right;
     margin-left: auto;
     visibility: hidden;
-   
+     
     
     
 }
@@ -364,7 +361,7 @@ navside ul li a{
     width: 100%;
     display: flex;
     text-decoration: none;
-    color: #ffffff;
+    color: var(--black-color);
 
 
 }
