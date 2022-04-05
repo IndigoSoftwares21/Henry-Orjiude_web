@@ -3,6 +3,8 @@
     --bg-color: rgb(242, 255, 254);
     --black-color:#000;
     --orange:#26A69A;
+    --orangenull:#ff9900;
+    --navnull:#26A69A;
     --white:#fff;
     --nav:#26A69A;
     --navy:#ffffff;
@@ -93,6 +95,56 @@ body{
     animation: typewriter var(--typewriterspeed) steps(40) 1s 1 normal both, blink 1000ms steps(40) infinite normal ;
 }
 
+/* CSS */
+.contactme_btn {
+    align-items: center;
+    appearance: none;
+    background-image: radial-gradient(100% 100% at 100% 0, var(--orangenull) 0, var(--navnull) 100%);
+    border: 0;
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgrgba(0, 0, 0, 0.5) -3px 0 inset;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: "JetBrains Mono",monospace;
+    height: 0px;
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    padding-left: 16px;
+    padding-right: 16px;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    transition: box-shadow .15s,transform .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow,transform;
+    font-size: 18px;
+    margin-top: 18px;
+    filter: blur(2px);
+    transition: all 0.5s;
+    animation: growUp 0.8s ease calc(var(--typewriterspeed) + 2.4s)  forwards;
+  }
+  
+  .contactme_btn:focus {
+    box-shadow: #000 0 0 0 1.5px inset, rgba(0, 0, 0, 0.4) 0 2px 4px, rgrgba(0, 0, 0, 0.3) 7px 13px -3px, var(--navnull) 0 -3px 0 inset;
+  }
+  
+  .contactme_btn:hover {
+    box-shadow: var(--navnull) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, var(--navnull) 0 -3px 0 inset;
+    transform: translateY(-2px);
+  }
+  
+  .contactme_btn:active {
+    box-shadow: #3c4fe0 0 3px 7px inset;
+    transform: translateY(2px);
+  }
+  
 /************************Animations************************/
 @keyframes typewriter {
     from{
@@ -124,6 +176,25 @@ body{
     {
         opacity: 1;
         transform: translateX(0);
+    }
+}
+@keyframes growUp {
+    0%{
+       height: 0px;
+       filter: blur(2px);
+    }
+    50%{
+       height: 48px;
+       filter: blur(2px);
+    }
+    80%
+    {
+        filter: blur(0px);
+    }
+    100%
+    {
+        height: 48px;
+        filter: blur(0px);
     }
 }
 /************************Animations************************/
@@ -557,7 +628,7 @@ text-decoration: underline 3px #1D3557;
     color: var(--black-color);
     margin-top: 10px;
     font-family: 'Chakra Petch', sans-serif;
-    border: 2px solid  white;
+    
 }
 .footer
 {
@@ -643,23 +714,53 @@ text-decoration: underline 3px #1D3557;
     align-items: center;
     display: flex;
 }
-.get_yours_now
-{
-    background-color: rgb(255, 255, 255);
-    padding:10px;
-    margin: 5px;
-    border: 2px solid #26A69A ;
-    border-radius: 7px;
-    color: #14213D;
-    font-size: 25px;
-    font-family: 'Roboto Mono', monospace;
+/* CSS */
+.get_yours_now {
+    align-items: center;
+    appearance: none;
+    background-color: #FCFCFD;
+    border-radius: 4px;
+    border-width: 1px;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
+    box-sizing: border-box;
+    color: #36395A;
     cursor: pointer;
-}
-.get_yours_now:hover
-{
-    background-color: rgb(180, 180, 180);
-    color: #ffffff;
-}
+    display: inline-flex;
+    font-family: "JetBrains Mono",monospace;
+    height: 48px;
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    padding-left: 16px;
+    padding-right: 16px;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    transition: box-shadow .15s,transform .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow,transform;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .get_yours_now:focus {
+    box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+  }
+  
+  .get_yours_now:hover {
+    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    transform: translateY(-2px);
+  }
+  
+  .get_yours_now:active {
+    box-shadow: #D6D6E7 0 3px 7px inset;
+    transform: translateY(2px);
+  }
+  
 .contact
 {
     width: 100%;
@@ -720,7 +821,7 @@ textarea
 
 /************************MEDIA QUERIES************************/
 
-@media screen and (max-width: 768px)
+@media screen and (max-width: 1000px)
 {
 
     #bars
