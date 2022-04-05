@@ -207,15 +207,16 @@ section.orange
     width: 100%;
     height: fit-content;
    
-    
+    background: var(--nav);
     overflow: hidden;
+    /*
     background: linear-gradient(101deg, #550527, #2a9d8f, #f2fffe);
     background-size: 600% 600%;
 
     -webkit-animation: AnimationName 16s ease infinite;
     -moz-animation: AnimationName 16s ease infinite;
     -o-animation: AnimationName 16s ease infinite;
-    animation: AnimationName 16s ease infinite;
+    animation: AnimationName 16s ease infinite;*/
     
 }
 @-webkit-keyframes AnimationName {
