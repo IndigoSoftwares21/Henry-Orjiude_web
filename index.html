@@ -234,10 +234,10 @@
             
             <div class="form_wrapper">
                 <p>Send me a message</p>
-                <form action="#">
-                    <input placeholder="Name" type="text">
+                <form action="send.php" method="POST">
+                    <input placeholder="Name" name="name" type="text">
                     <br>
-                    <input placeholder="Email" type="email">
+                    <input placeholder="Email" name="email" type="email">
                     <br><br>
                     <textarea placeholder="Enter Your Message Here" name="message" id="message" cols="30" rows="10"></textarea>
                     <br>
@@ -250,7 +250,7 @@
             </div>
         </div>
  
-        <p class="final">Made With &#10084; In Nigeria  </p>
+        <p class="final">Made With &#10084; In Nigeria  </p> 
         <p class="final" id="indigo" onclick="indigo()">&#9400; Indigo Softwares 2022 </p>
 
     </section>

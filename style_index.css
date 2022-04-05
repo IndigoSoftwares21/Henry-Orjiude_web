@@ -628,6 +628,7 @@ text-decoration: underline 3px #1D3557;
 .final
 {
     text-align: center;
+    color: var(--black-color);
     cursor: pointer;
 }
 #indigo:hover
