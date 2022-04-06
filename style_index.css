@@ -336,6 +336,10 @@ navside ul{
     gap: 30px;
     
 }
+#info
+{
+    font-size: 15px;
+}
 li.resume
 {
     background-color:var(--orange);
@@ -824,7 +828,10 @@ textarea
 
 @media screen and (max-width: 1000px)
 {
-
+    #info
+    {
+        font-size: 12px;
+    }
     #bars
     {
         font-size: 34px;

@@ -120,7 +120,7 @@
             <h1 class="main_text">Hello, I am Henry Orjiude.</h1>
             <br>
             <h1 class="sub_text">A Fullstack Web Developer</h1>
-            <button id="contactme" class="contactme_btn">Contact Me</button>
+            <button id="contactme" onclick="gotoContact()" class="contactme_btn">Contact Me</button>
         </article>
        
         <img class="me" src="Me.png" alt="">
@@ -212,7 +212,7 @@
     </div>
     <section class="footer" id="footer">
         <p class="proj_text">Contact</p>
-        <div class="contact">
+        <div class="contact" id="contact">
             <div class="details">
                 
                 <span class="conspan">
@@ -235,21 +235,54 @@
             
             <div class="form_wrapper">
                 <p>Send me a message</p>
-                <form action="send.php" method="POST">
-                    <input placeholder="Name" name="name" type="text">
+                <form onsubmit="sendEmail(); reset(); return false;">
+                    <input placeholder="Name" name="name" id="name" type="text">
                     <br>
-                    <input placeholder="Email" name="email" type="email">
+                    <input placeholder="Email" name="email" id="email" type="email">
                     <br><br>
                     <textarea placeholder="Enter Your Message Here" name="message" id="message" cols="30" rows="10"></textarea>
                     <br>
-                    <button class="submit" type="submit">
+                    <button class="submit" type="submit" id="sendbtn">
                         Send
                     </button>
+                    <p id="info"></p>
                     
                 </form>
     
             </div>
         </div>
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
+        <script>
+           
+
+            function sendEmail()
+            {
+                var emailTo = document.getElementById("email").value
+                var Name = document.getElementById("name").value
+                var msg = document.getElementById("message").value
+                var info = document.getElementById("info")
+                info.innerHTML = "Sending..."
+                Email.send({
+                    Host : " smtp.gmail.com",
+                    Username : "sullivanorjiude@gmail.com",
+                    Password : "qsuvxzutvwyiuguc",
+                    To : "sullivanorjiude@gmail.com",
+                    From : emailTo,
+                    Subject : "New Contact Form Enquiry from "+Name,
+                    
+                    Body : msg
+                }).then(
+                message => sent()
+                );
+            }
+            function sent() {
+                var info = document.getElementById("info")
+                info.innerHTML = "Message Sent Succesfully."
+                
+               
+                
+            }
+        </script>
  
         <p class="final">Made With &#10084; In Nigeria  </p> 
         <p class="final" id="indigo" onclick="indigo()">&#9400; Indigo Softwares 2022 </p>

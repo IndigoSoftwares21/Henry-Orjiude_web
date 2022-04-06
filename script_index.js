@@ -173,6 +173,10 @@ else
     
 }
 
+function gotoContact()
+{
+    window.location.href = "#contact"
+}
 
 
 
