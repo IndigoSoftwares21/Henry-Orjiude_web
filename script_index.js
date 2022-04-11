@@ -178,6 +178,12 @@ function gotoContact()
     window.location.href = "#contact"
 }
 
+ function getyours() {
+    window.location.href = "#contact"
+    document.getElementById("message").focus();
+document.getElementById("message").select();
+document.getElementById("message").value = "Request for A Website:";
 
 
+ }
 
