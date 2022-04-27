@@ -655,7 +655,7 @@ text-decoration: underline 3px #1D3557;
     font-size: 50px;
     color: var(--black-color);
     margin-top: 10px;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Saira Condensed', sans-serif;
     
 }
 .footer
@@ -851,6 +851,15 @@ textarea
 
 @media screen and (max-width: 1000px)
 {
+    .title_{
+        font-size: 25px;
+    }
+    .title_sub{
+    font-size: 20px;
+}
+    .proj_text{
+        font-size: 40px;
+    }
     #info
     {
         font-size: 12px;
